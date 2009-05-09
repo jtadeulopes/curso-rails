@@ -1,0 +1,20 @@
+<h1>Show product</h2>
+  <p>
+    <%= label :product, :category %><br />
+    <%=h @product.category_name %>
+  </p>
+  <p>
+    <%= label :product, :name %><br />
+    <%=h @product.name %>
+  </p>
+  <p>
+    <%= label :product, :price %><br />
+    <%=h @product.price %>
+  </p>
+  <p>
+    <%= label :product, :description %><br />
+    <%=h @product.description %>
+  </p>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
