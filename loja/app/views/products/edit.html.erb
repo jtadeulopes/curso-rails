@@ -1,6 +1,6 @@
-<h1>Editing product</h1>
+<h1>Editing product</h1><br />
 
-<% form_for(@product) do |f| %>
+<% form_for(@product, :html => {:multipart => true}) do |f| %>
   <%= f.error_messages %>
   <%= render :partial => "form", :locals => {:f => f} %>
   <p>

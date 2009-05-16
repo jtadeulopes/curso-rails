@@ -1,4 +1,4 @@
-<h1>Show product</h2>
+<h1>Show product</h1><br />
   <p>
     <%= label :product, :category %><br />
     <%=h @product.category_name %>
@@ -15,6 +15,8 @@
     <%= label :product, :description %><br />
     <%=h @product.description %>
   </p>
+
+<br />
 
 <%= link_to 'Edit', edit_product_path(@product) %> |
 <%= link_to 'Back', products_path %>

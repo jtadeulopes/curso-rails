@@ -1,10 +1,10 @@
-  <% @products.in_groups_of(2, Product.new).each do |group| %>
-<div class="group"> 
-      <% group.each do |product| %>
+    <div class="group"> 
+      <% @products.each do |product| %>
         <div class="product">
-          <strong><%= link_to h(product.name),:action => :show, :id => product %></strong><br />
+          <%= image_tag product.photo(:thumb) %><br /><br />
+          <h3><strong><%= link_to h(product.name),:action => :show, :id => product %></strong></h3>
+          <p><%=h product.category_name %></p>
           <%=h product.price %>
         </div>
       <% end %>
-</div>
-  <% end %>
+    </div>
