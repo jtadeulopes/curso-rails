@@ -5,14 +5,17 @@
 <head>
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Loja</title>
-  <%= stylesheet_link_tag 'scaffold' %>
+  <%= stylesheet_link_tag 'css_screen' %>
 </head>
 <body>
-<h1>Loja</h1>
-<hr />
-<p style="color: green"><%= flash[:notice] %></p>
+  <div id="top">
+    <h1><%= link_to 'Loja', :controller => 'showcase' %></h1>
+  </div>
+  <p style="color: green"><%= flash[:notice] %></p>
 
-<%= yield %>
+  <div id="content">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

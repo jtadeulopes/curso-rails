@@ -1,0 +1,13 @@
+<h2><%= @product.name %></h2>
+  <p>
+    <%= label :product, :category %>: 
+    <%=h @product.category_name %>
+  </p>
+  <p>
+    <%=h @product.price %>
+  </p>
+  <br />
+  <pre>
+    <%= label :product, :description %>: 
+    <%=sanitize @product.description %>
+  </pre>

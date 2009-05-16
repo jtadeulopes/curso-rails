@@ -1,0 +1,10 @@
+  <% @products.in_groups_of(2, Product.new).each do |group| %>
+<div class="group"> 
+      <% group.each do |product| %>
+        <div class="product">
+          <strong><%= link_to h(product.name),:action => :show, :id => product %></strong><br />
+          <%=h product.price %>
+        </div>
+      <% end %>
+</div>
+  <% end %>

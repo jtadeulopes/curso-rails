@@ -1,0 +1,36 @@
+* {margin: 0px;}
+body {font: 12px/140% "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;} 
+img {border:0px;}
+h1 {font-size: 24px;}
+h2 {font-size: 18px;}
+h3 {font-size: 14px;}
+h4 {font-size: 12px;}
+a:link, a:active, a:visited {text-decoration: underline; color:#000000;}
+a:hover {text-decoration:none; color:#000000;}
+.clear {clear:both;}
+
+#top {
+  padding: 20px;
+  border-bottom: 2px solid #EBEBEB;
+}
+
+#content {
+  padding: 20px;
+}
+
+.product {
+  width: 150px;
+  height: 150px;
+  padding: 10px;
+  background: #EBEBEB;
+  float: left;
+  border: 1px dashed #000000;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}
+.product:hover {
+  background: #FFFFFF;
+}
+.group {
+  height: 200px;
+}

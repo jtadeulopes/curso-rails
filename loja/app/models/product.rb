@@ -8,6 +8,11 @@ class Product < ActiveRecord::Base
  
   belongs_to :category
 
+  # se o metodo for chamado pela classe, usar o self
+  def self.for_showcase
+    Product.all
+  end
+
   def category_name
     category.try(:name)
   end
