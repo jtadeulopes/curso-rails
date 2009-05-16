@@ -1,0 +1,9 @@
+.DS_Store
+loja/log/*.log
+loja/tmp/**/*
+ 
+loja/db/*.sqlite3
+ 
+*.cache
+*.log
+*.pid
