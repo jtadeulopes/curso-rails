@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+class UsersController < PrivateController
   # GET /users
   # GET /users.xml
   def index
