@@ -1,4 +1,5 @@
-class ProductsController < ApplicationController
+class ProductsController < PrivateController
+
   # GET /products
   # GET /products.xml
   def index

@@ -1,4 +1,4 @@
-class CategoriesController < ApplicationController
+class CategoriesController < PrivateController
   # GET /categories
   # GET /categories.xml
   def index
