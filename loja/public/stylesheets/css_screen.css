@@ -51,6 +51,11 @@ a:hover {text-decoration:none; color:#000000;}
   border-bottom: 2px solid #EBEBEB;
 }
 
+#menu {
+  padding: 10px;
+  border-bottom: 2px solid #EBEBEB;
+}
+
 #content {
   padding: 20px;
 }

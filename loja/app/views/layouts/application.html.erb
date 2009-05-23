@@ -8,20 +8,23 @@
   <%= stylesheet_link_tag 'css_screen' %>
 </head>
 <body>
+
   <div id="top">
     <h1><%= link_to 'Loja', :controller => 'showcase' %></h1>
   </div>
+
   <p style="color: green"><%= flash[:notice] %></p>
-<%= link_to "showcase", :controller => :showcase %> |
-<% if user_logged? %>
-<%= link_to "products", :controller => :products %> |
-<%= link_to "categories", :controller => :categories %> |
-<%= link_to "users", :controller => :users %> |
-<%= link_to "logout", :controller => :authenticate, :action => :logout %><br />
-Olá <%= current_user.login %>
-<% end %>
-<hr />
-<p style="color: green"><%= flash[:notice] %></p>
+
+  <div id="menu">
+  <%= link_to "showcase", :controller => :showcase %> |
+  <% if user_logged? %>
+    <%= link_to "products", :controller => :products %> |
+    <%= link_to "categories", :controller => :categories %> |
+    <%= link_to "users", :controller => :users %> |
+    <%= link_to "logout", :controller => :authenticate, :action => :logout %><br />
+    Olá <%= current_user.login %>
+  <% end %>
+  </div>
 
   <div id="content">
     <%= yield %>

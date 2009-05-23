@@ -9,11 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-<<<<<<< HEAD:loja/db/schema.rb
-ActiveRecord::Schema.define(:version => 20090516163124) do
-=======
 ActiveRecord::Schema.define(:version => 20090516180110) do
->>>>>>> login:loja/db/schema.rb
 
   create_table "categories", :force => true do |t|
     t.string   "name"

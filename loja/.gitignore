@@ -5,3 +5,4 @@ tmp/**/*
 *.cache
 *.log
 *.pid
+*.swp
