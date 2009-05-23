@@ -1,6 +1,6 @@
 .DS_Store
-loja/log/*.log
-loja/tmp/**/*
+log/*.log
+tmp/**/*
  
 *.cache
 *.log
