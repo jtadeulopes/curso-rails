@@ -3,7 +3,10 @@ class User < ActiveRecord::Base
   validates_presence_of :login
   validates_length_of :login, :within => 2..255
   validates_format_of :login, :with => /^[a-zA-Z0-9_]+$/
-  validates_presence_of :password
+  validates_length_of  :password,
+                       :within => 3..255,
+                       :allow_blank => true,
+                       :on => :create
   validates_confirmation_of :password
 
   # simula um atributo (campo) virtual
@@ -12,9 +15,11 @@ class User < ActiveRecord::Base
   before_save :password_encrypt
 
   def password_encrypt
+    return if self.password.nil? || self.password.strip == ""
     self.password_hash = User.encrypt(self.password)
   end
 
+  # autenticação
   def self.authenticate(args = {})
     user = User.find_by_login_and_password_hash(args[:login], User.encrypt(args[:password]))
     unless user
@@ -24,6 +29,7 @@ class User < ActiveRecord::Base
     user
   end
 
+  # encripta
   def self.encrypt(string)
     Digest::SHA1.hexdigest(string)
   end

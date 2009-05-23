@@ -1,5 +1,5 @@
   <p>
-    <%= f.label :login %><br />
+    <%= f.label :login %><%= f.error_message_on(:login) %><br />
     <%= f.text_field :login %>
   </p>
   <p>
@@ -10,3 +10,4 @@
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation %>
   </p>
+  <%= show_errors(@user) %>

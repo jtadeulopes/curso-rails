@@ -11,8 +11,14 @@ a:hover {text-decoration:none; color:#000000;}
 
 .fieldWithErrors {
   padding: 2px;
-  background-color: red;
-  display: table;
+  display: inline;
+  color: red;
+}
+
+.formError {
+  display: inline;
+  color: #999999;
+  font-size: smaller;
 }
 
 #errorExplanation {

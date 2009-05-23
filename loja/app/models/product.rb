@@ -19,4 +19,17 @@ class Product < ActiveRecord::Base
     category.try(:name)
   end
 
+  # cria metodos para formatação de um atribudo em especifico
+  # este processo pode ser feito para cada atributo do model
+
+  # getter
+  def formatted_price
+    self.price.to_s.gsub(".", ",")
+  end
+
+  # setter
+  def formatted_price=(value)
+    self.price = value.gsub(",", ".").to_f
+  end
+
 end
