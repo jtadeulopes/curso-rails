@@ -4,7 +4,11 @@
           <%= image_tag product.photo(:thumb) %><br /><br />
           <h3><strong><%= link_to h(product.name),:action => :show, :id => product %></strong></h3>
           <p><%=h product.category_name %></p>
-          <%=h product.price %>
+          <%=h product.price %><br />
+          <%= link_to "<strong>Adicionar</strong>",
+                   :controller => :cart,
+                   :action => :add_product,
+                   :id => product %>
         </div>
       <% end %>
     </div>

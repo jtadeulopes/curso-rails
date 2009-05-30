@@ -1,3 +1,14 @@
+# == Schema Information
+#
+# Table name: users
+#
+#  id            :integer         not null, primary key
+#  login         :string(255)
+#  created_at    :datetime
+#  updated_at    :datetime
+#  password_hash :string(255)
+#
+
 class User < ActiveRecord::Base
 
   has_and_belongs_to_many :groups

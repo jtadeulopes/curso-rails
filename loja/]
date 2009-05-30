@@ -1,0 +1,13 @@
+<h1><%= t(".cart")%></h1>
+
+<table>
+  <tr>
+    <th><%= t("product") %></th>
+    <th><%= t("quantity") %></th>
+    <th><%= t("price") %></th>
+    <th><%= t("total") %></th>
+  <tr>
+  <tr>
+    <td></td>
+  <tr>
+</table>

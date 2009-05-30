@@ -1,0 +1,27 @@
+<table>
+  <tr>
+    <th>produto</th>
+    <th>quantidade</th>
+    <th>preço</th>
+    <th>total</th>
+  </tr>
+  <% @cart.items.each do |item| %>
+    <tr>
+      <td><%=h item.product.name %></td>
+      <td><%=h item.quantity %></td>
+      <td><%=h number_to_currency(item.product.price) %></td>
+      <td><%=h number_to_currency(item.total) %></td>
+      </td>
+      <td>
+	<%= link_to_remote "Adicionar", :url => {:action => :add_product, :id => item.product}, :update => "cart_table", :loading => "Element.show('wait_#{item.product.id}')", :complete => "Element.hide('wait_#{item.product.id}')" %>
+
+	<%= link_to_remote "Remover", :url => {:action => :remove_product, :id => item.product}, :update => "cart_table", :loading => "Element.show('wait_#{item.product.id}')", :complete => "Element.hide('wait_#{item.product.id}')" %>
+      </td>
+      <td style="white-space: nowrap;"><div id="wait_<%= item.product.id%>" style="display:none;"><%= image_tag "loader.gif" %></div>
+    <tr>
+  <% end %>
+  <tr>
+    <th colspan=4>total</th>
+    <th><%= number_to_currency(@cart.total) %></th>
+  </tr>
+</table>

@@ -1,3 +1,19 @@
+# == Schema Information
+#
+# Table name: products
+#
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  description        :text
+#  price              :decimal(, )
+#  created_at         :datetime
+#  updated_at         :datetime
+#  category_id        :integer
+#  photo_file_name    :string(255)
+#  photo_content_type :string(255)
+#  photo_file_size    :integer
+#
+
 class Product < ActiveRecord::Base
  
   has_attached_file :photo, :styles => { :thumb => "80x80#" }, :default_url => "/images/image_null.jpg"
@@ -13,6 +29,10 @@ class Product < ActiveRecord::Base
   # se o metodo for chamado pela classe, usar o self
   def self.for_showcase
     Product.all
+  end
+
+  def self.find_all_price_between(min,max)
+    Product.find(:all, :conditions => ["price between ? and ?", min, max])
   end
 
   def category_name

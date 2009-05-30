@@ -1,0 +1,11 @@
+one:
+  cart: one
+  product:  sock
+  quantity: 2
+  price: 30
+
+two:
+  cart: one
+  product: tie
+  quantity: 1
+  price: 50
