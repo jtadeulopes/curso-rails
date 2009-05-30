@@ -1,4 +1,15 @@
 class UsersController < PrivateController
+
+  include ApplicationHelper
+
+  before_filter :admin_only
+
+  def admin_only
+    unless current_user.belongs_to_group("Administradores")
+      redirect_to :controller => :authenticate, :action => :index
+    end
+  end
+
   # GET /users
   # GET /users.xml
   def index

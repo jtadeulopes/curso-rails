@@ -9,13 +9,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090523150353) do
+ActiveRecord::Schema.define(:version => 20090530121926) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "groups", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "groups_users", :id => false, :force => true do |t|
+    t.integer "group_id", :null => false
+    t.integer "user_id",  :null => false
+  end
+
+  add_index "groups_users", ["group_id", "user_id"], :name => "index_groups_users_on_group_id_and_user_id", :unique => true
 
   create_table "products", :force => true do |t|
     t.string   "name"

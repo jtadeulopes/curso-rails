@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 
+  has_and_belongs_to_many :groups
+  
   validates_presence_of :login
   validates_length_of :login, :within => 2..255
   validates_format_of :login, :with => /^[a-zA-Z0-9_]+$/
@@ -32,6 +34,11 @@ class User < ActiveRecord::Base
   # encripta
   def self.encrypt(string)
     Digest::SHA1.hexdigest(string)
+  end
+
+  # verifica se o usuario pertence ao grupo
+  def belongs_to_group(group)
+    self.groups.find_by_name(group)
   end
 
 end
